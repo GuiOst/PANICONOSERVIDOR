@@ -1,0 +1,228 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/door.gd" id="1_idh2y"]
+[ext_resource type="Material" path="res://assets/materials/metal_painted_gray.tres" id="2_81sjx"]
+[ext_resource type="Material" path="res://assets/materials/hazard_stripes.tres" id="3_nf111"]
+[ext_resource type="Material" path="res://assets/materials/metal_door.tres" id="4_h3ty1"]
+[ext_resource type="Material" path="res://assets/materials/metal_dark.tres" id="5_13mhs"]
+[ext_resource type="Material" path="res://assets/materials/metal_bare.tres" id="6_tlwst"]
+[ext_resource type="Material" path="res://assets/materials/glass_dirty.tres" id="7_xc6vw"]
+[ext_resource type="FontFile" path="res://assets/fonts/DejaVuSansMono-Bold.ttf" id="8_qimt5"]
+[ext_resource type="Script" path="res://scripts/interaction/interactable.gd" id="9_kvs3t"]
+[ext_resource type="Script" path="res://scripts/interaction/door_audio.gd" id="10_oiymb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ctix4"]
+material = ExtResource("2_81sjx")
+size = Vector3(0.15, 2.55, 0.36)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vw0yj"]
+size = Vector3(0.15, 2.55, 0.36)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qssdi"]
+size = Vector3(0.15, 2.55, 0.36)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ud1s8"]
+material = ExtResource("2_81sjx")
+size = Vector3(1.7, 0.15, 0.36)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xn2b3"]
+size = Vector3(1.7, 0.15, 0.36)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f8un0"]
+material = ExtResource("3_nf111")
+size = Vector3(0.15, 2.4, 0.005)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vyfcv"]
+material = ExtResource("4_h3ty1")
+size = Vector3(1.38, 2.37, 0.08)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gpek2"]
+size = Vector3(1.38, 2.37, 0.08)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u4620"]
+material = ExtResource("5_13mhs")
+size = Vector3(1.2, 0.09, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4bw73"]
+material = ExtResource("3_nf111")
+size = Vector3(1.2, 0.25, 0.01)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xw421"]
+material = ExtResource("6_tlwst")
+top_radius = 0.018
+bottom_radius = 0.018
+height = 0.16
+radial_segments = 8
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_f16j2"]
+material = ExtResource("5_13mhs")
+size = Vector3(0.05, 0.22, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_08wqo"]
+material = ExtResource("7_xc6vw")
+size = Vector3(0.32, 0.42, 0.09)
+
+[sub_resource type="BoxMesh" id="BoxMesh_av4j3"]
+material = ExtResource("5_13mhs")
+size = Vector3(0.38, 0.03, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l8kr1"]
+size = Vector3(1.38, 2.37, 0.3)
+
+[node name="IndustrialDoor" type="Node3D" unique_id=2071864457]
+script = ExtResource("1_idh2y")
+
+[node name="Frame" type="StaticBody3D" parent="." unique_id=1064344052]
+
+[node name="JambL" type="MeshInstance3D" parent="Frame" unique_id=88198132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.775, 1.275, 0)
+mesh = SubResource("BoxMesh_ctix4")
+
+[node name="Col" type="CollisionShape3D" parent="Frame" unique_id=23555383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.775, 1.275, 0)
+shape = SubResource("BoxShape3D_vw0yj")
+
+[node name="JambR" type="MeshInstance3D" parent="Frame" unique_id=830757896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.775, 1.275, 0)
+mesh = SubResource("BoxMesh_ctix4")
+
+[node name="Col2" type="CollisionShape3D" parent="Frame" unique_id=35715355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.775, 1.275, 0)
+shape = SubResource("BoxShape3D_qssdi")
+
+[node name="Header" type="MeshInstance3D" parent="Frame" unique_id=1080607290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.475, 0)
+mesh = SubResource("BoxMesh_ud1s8")
+
+[node name="Col3" type="CollisionShape3D" parent="Frame" unique_id=724407815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.475, 0)
+shape = SubResource("BoxShape3D_xn2b3")
+
+[node name="StripeL" type="MeshInstance3D" parent="Frame" unique_id=912908950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.775, 1.2, -0.183)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_f8un0")
+
+[node name="StripeR" type="MeshInstance3D" parent="Frame" unique_id=1400886887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.775, 1.2, -0.183)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_f8un0")
+
+[node name="StripeL2" type="MeshInstance3D" parent="Frame" unique_id=220951010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.775, 1.2, 0.183)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_f8un0")
+
+[node name="StripeR2" type="MeshInstance3D" parent="Frame" unique_id=1274901196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.775, 1.2, 0.183)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_f8un0")
+
+[node name="Panel" type="AnimatableBody3D" parent="." unique_id=333949316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0, 0)
+
+[node name="Leaf" type="MeshInstance3D" parent="Panel" unique_id=218077268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 1.2, 0)
+mesh = SubResource("BoxMesh_vyfcv")
+
+[node name="PanelShape" type="CollisionShape3D" parent="Panel" unique_id=404767060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 1.2, 0)
+shape = SubResource("BoxShape3D_gpek2")
+
+[node name="Rib" type="MeshInstance3D" parent="Panel" unique_id=2093518413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.45, -0.05)
+mesh = SubResource("BoxMesh_u4620")
+
+[node name="Rib2" type="MeshInstance3D" parent="Panel" unique_id=2001664451]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 1.95, -0.05)
+mesh = SubResource("BoxMesh_u4620")
+
+[node name="KickPlate" type="MeshInstance3D" parent="Panel" unique_id=170558505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.17, -0.045)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_4bw73")
+
+[node name="Handle" type="MeshInstance3D" parent="Panel" unique_id=193022194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22, 1.05, -0.07)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_xw421")
+
+[node name="HandleBase" type="MeshInstance3D" parent="Panel" unique_id=657935208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22, 1.05, -0.045)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_f16j2")
+
+[node name="Rib3" type="MeshInstance3D" parent="Panel" unique_id=1861670355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.45, 0.05)
+mesh = SubResource("BoxMesh_u4620")
+
+[node name="Rib4" type="MeshInstance3D" parent="Panel" unique_id=1344909156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 1.95, 0.05)
+mesh = SubResource("BoxMesh_u4620")
+
+[node name="KickPlate2" type="MeshInstance3D" parent="Panel" unique_id=380442624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.17, 0.045)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_4bw73")
+
+[node name="Handle2" type="MeshInstance3D" parent="Panel" unique_id=1339308902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22, 1.05, 0.07)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_xw421")
+
+[node name="HandleBase2" type="MeshInstance3D" parent="Panel" unique_id=1399044129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22, 1.05, 0.045)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_f16j2")
+
+[node name="Window" type="MeshInstance3D" parent="Panel" unique_id=1099314417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 1.55, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_08wqo")
+
+[node name="WindowFrameT" type="MeshInstance3D" parent="Panel" unique_id=1171090882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 1.775, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_av4j3")
+
+[node name="WindowFrameB" type="MeshInstance3D" parent="Panel" unique_id=1168428332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 1.325, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_av4j3")
+
+[node name="LabelFront" type="Label3D" parent="Panel" unique_id=922484890]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 1.2, 0.041)
+pixel_size = 0.003
+shaded = true
+double_sided = false
+alpha_cut = 2
+modulate = Color(0.85, 0.82, 0.7, 1)
+text = "ACESSO RESTRITO"
+font = ExtResource("8_qimt5")
+outline_size = 0
+
+[node name="LabelBack" type="Label3D" parent="Panel" unique_id=1972970878]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.7, 1.2, -0.041)
+pixel_size = 0.003
+shaded = true
+double_sided = false
+alpha_cut = 2
+modulate = Color(0.85, 0.82, 0.7, 1)
+text = "ACESSO RESTRITO"
+font = ExtResource("8_qimt5")
+outline_size = 0
+
+[node name="InteractArea" type="Area3D" parent="Panel" unique_id=370301773]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+script = ExtResource("9_kvs3t")
+prompt_text = "abrir"
+
+[node name="AreaShape" type="CollisionShape3D" parent="Panel/InteractArea" unique_id=1891281157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 1.2, 0)
+shape = SubResource("BoxShape3D_l8kr1")
+
+[node name="DoorSounds" type="Node3D" parent="Panel" unique_id=2064510948]
+script = ExtResource("10_oiymb")

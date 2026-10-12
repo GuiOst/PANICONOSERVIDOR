@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/textures/wood_crate_albedo.png" id="1_8ea46"]
+[ext_resource type="Texture2D" path="res://assets/textures/wood_crate_normal.png" id="2_27i4n"]
+
+[resource]
+albedo_color = Color(0.9, 0.85, 0.8, 1)
+albedo_texture = ExtResource("1_8ea46")
+metallic_specular = 0.4
+roughness = 0.85
+normal_enabled = true
+normal_texture = ExtResource("2_27i4n")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 4.0
+texture_filter = 5

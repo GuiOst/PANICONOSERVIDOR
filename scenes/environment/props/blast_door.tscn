@@ -1,0 +1,154 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/materials/metal_painted_gray.tres" id="1_60e7w"]
+[ext_resource type="Material" path="res://assets/materials/metal_door.tres" id="2_rxkqr"]
+[ext_resource type="Material" path="res://assets/materials/grate_dark.tres" id="3_adwo2"]
+[ext_resource type="Material" path="res://assets/materials/metal_dark.tres" id="4_j04hw"]
+[ext_resource type="Material" path="res://assets/materials/hazard_stripes.tres" id="5_iy7d5"]
+[ext_resource type="Material" path="res://assets/materials/led_red.tres" id="6_1j45j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5p5ww"]
+material = ExtResource("1_60e7w")
+size = Vector3(0.4, 3.2, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kjiqq"]
+size = Vector3(0.4, 3.2, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5401i"]
+size = Vector3(0.4, 3.2, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ujcx0"]
+material = ExtResource("1_60e7w")
+size = Vector3(3.6, 0.4, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fve6d"]
+size = Vector3(3.6, 0.4, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_shj7q"]
+material = ExtResource("2_rxkqr")
+size = Vector3(1.4, 2.8, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1r0x3"]
+size = Vector3(1.4, 2.8, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gkr0h"]
+size = Vector3(1.4, 2.8, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d8ob8"]
+material = ExtResource("3_adwo2")
+size = Vector3(0.02, 2.8, 0.27)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7m7ld"]
+material = ExtResource("4_j04hw")
+size = Vector3(1.3, 0.12, 0.05)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c85c7"]
+material = ExtResource("5_iy7d5")
+size = Vector3(0.36, 3, 0.01)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sjqef"]
+material = ExtResource("5_iy7d5")
+size = Vector3(2.8, 0.3, 0.01)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dhu57"]
+material = ExtResource("4_j04hw")
+size = Vector3(0.2, 0.3, 0.06)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0i25y"]
+material = ExtResource("6_1j45j")
+size = Vector3(0.04, 0.04, 0.01)
+
+[node name="BlastDoor" type="StaticBody3D" unique_id=1272170513]
+
+[node name="FrameL" type="MeshInstance3D" parent="." unique_id=503876435]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 1.6, 0)
+mesh = SubResource("BoxMesh_5p5ww")
+
+[node name="Col" type="CollisionShape3D" parent="." unique_id=1264429116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 1.6, 0)
+shape = SubResource("BoxShape3D_kjiqq")
+
+[node name="FrameR" type="MeshInstance3D" parent="." unique_id=242577096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 1.6, 0)
+mesh = SubResource("BoxMesh_5p5ww")
+
+[node name="Col2" type="CollisionShape3D" parent="." unique_id=1114559306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 1.6, 0)
+shape = SubResource("BoxShape3D_5401i")
+
+[node name="FrameTop" type="MeshInstance3D" parent="." unique_id=225519153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+mesh = SubResource("BoxMesh_ujcx0")
+
+[node name="Col3" type="CollisionShape3D" parent="." unique_id=1978314418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+shape = SubResource("BoxShape3D_fve6d")
+
+[node name="LeafL" type="MeshInstance3D" parent="." unique_id=1156566357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 1.4, 0.05)
+mesh = SubResource("BoxMesh_shj7q")
+
+[node name="Col4" type="CollisionShape3D" parent="." unique_id=1404849747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 1.4, 0.05)
+shape = SubResource("BoxShape3D_1r0x3")
+
+[node name="LeafR" type="MeshInstance3D" parent="." unique_id=1709833401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 1.4, 0.05)
+mesh = SubResource("BoxMesh_shj7q")
+
+[node name="Col5" type="CollisionShape3D" parent="." unique_id=1487629797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 1.4, 0.05)
+shape = SubResource("BoxShape3D_gkr0h")
+
+[node name="Seam" type="MeshInstance3D" parent="." unique_id=1626652562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0.05)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_d8ob8")
+
+[node name="RibL" type="MeshInstance3D" parent="." unique_id=927755530]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.4, 0.2)
+mesh = SubResource("BoxMesh_7m7ld")
+
+[node name="RibR" type="MeshInstance3D" parent="." unique_id=619205882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.4, 0.2)
+mesh = SubResource("BoxMesh_7m7ld")
+
+[node name="RibL2" type="MeshInstance3D" parent="." unique_id=1709295948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 1.4, 0.2)
+mesh = SubResource("BoxMesh_7m7ld")
+
+[node name="RibR2" type="MeshInstance3D" parent="." unique_id=1991025708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 1.4, 0.2)
+mesh = SubResource("BoxMesh_7m7ld")
+
+[node name="RibL3" type="MeshInstance3D" parent="." unique_id=725926828]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 2.4, 0.2)
+mesh = SubResource("BoxMesh_7m7ld")
+
+[node name="RibR3" type="MeshInstance3D" parent="." unique_id=2124612920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 2.4, 0.2)
+mesh = SubResource("BoxMesh_7m7ld")
+
+[node name="HazardL" type="MeshInstance3D" parent="." unique_id=1487839848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 1.5, 0.256)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_c85c7")
+
+[node name="HazardR" type="MeshInstance3D" parent="." unique_id=482991752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 1.5, 0.256)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_c85c7")
+
+[node name="HazardTop" type="MeshInstance3D" parent="." unique_id=1415749766]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0.256)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_sjqef")
+
+[node name="KeypadBox" type="MeshInstance3D" parent="." unique_id=785891991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 1.3, 0.28)
+mesh = SubResource("BoxMesh_dhu57")
+
+[node name="KeypadLed" type="MeshInstance3D" parent="." unique_id=2013075285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 1.4, 0.312)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_0i25y")

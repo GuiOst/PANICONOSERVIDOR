@@ -1,0 +1,36 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/environment/emergency_light.gd" id="1_rlr5u"]
+[ext_resource type="Material" path="res://assets/materials/metal_dark.tres" id="2_ixos5"]
+[ext_resource type="Material" path="res://assets/materials/emergency_lens.tres" id="3_h7yvy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dahhg"]
+material = ExtResource("2_ixos5")
+size = Vector3(0.24, 0.06, 0.1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ff3mr"]
+material = ExtResource("3_h7yvy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 0.12
+radial_segments = 12
+rings = 1
+
+[node name="EmergencyLight" type="Node3D" unique_id=1821288944]
+script = ExtResource("1_rlr5u")
+
+[node name="Base" type="MeshInstance3D" parent="." unique_id=147658136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
+mesh = SubResource("BoxMesh_dahhg")
+
+[node name="Lens" type="MeshInstance3D" parent="." unique_id=1200115188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08, 0.06)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_ff3mr")
+
+[node name="Light" type="OmniLight3D" parent="." unique_id=2084364580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12, 0.25)
+light_color = Color(1, 0.12, 0.06, 1)
+light_volumetric_fog_energy = 1.5
+omni_range = 4.0
+omni_attenuation = 1.2

@@ -1,0 +1,67 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/materials/rubber_black.tres" id="1_okf5a"]
+[ext_resource type="Material" path="res://assets/materials/metal_bare.tres" id="2_a2sag"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_faddv"]
+material = ExtResource("1_okf5a")
+size = Vector3(0.45, 0.05, 0.45)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qwup5"]
+size = Vector3(0.45, 0.05, 0.45)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q2i4i"]
+material = ExtResource("1_okf5a")
+size = Vector3(0.45, 0.45, 0.04)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ykes3"]
+size = Vector3(0.45, 0.45, 0.04)
+
+[sub_resource type="BoxMesh" id="BoxMesh_e37y7"]
+material = ExtResource("2_a2sag")
+size = Vector3(0.03, 0.45, 0.03)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f1ppu"]
+size = Vector3(0.45, 0.45, 0.45)
+
+[node name="Chair" type="StaticBody3D" unique_id=319260588]
+
+[node name="Seat" type="MeshInstance3D" parent="." unique_id=196009117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46, 0)
+mesh = SubResource("BoxMesh_faddv")
+
+[node name="Col" type="CollisionShape3D" parent="." unique_id=93612471]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46, 0)
+shape = SubResource("BoxShape3D_qwup5")
+
+[node name="Back" type="MeshInstance3D" parent="." unique_id=440792749]
+transform = Transform3D(1, 0, 0, 0, 0.9945219, 0.104528464, 0, -0.104528464, 0.9945219, 0, 0.72, -0.21)
+mesh = SubResource("BoxMesh_q2i4i")
+
+[node name="Col2" type="CollisionShape3D" parent="." unique_id=383049109]
+transform = Transform3D(1, 0, 0, 0, 0.9945219, 0.104528464, 0, -0.104528464, 0.9945219, 0, 0.72, -0.21)
+shape = SubResource("BoxShape3D_ykes3")
+
+[node name="Leg" type="MeshInstance3D" parent="." unique_id=1476233514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.225, -0.2)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_e37y7")
+
+[node name="Leg2" type="MeshInstance3D" parent="." unique_id=11784351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.225, 0.2)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_e37y7")
+
+[node name="Leg3" type="MeshInstance3D" parent="." unique_id=1362185224]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.225, -0.2)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_e37y7")
+
+[node name="Leg4" type="MeshInstance3D" parent="." unique_id=569085072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.225, 0.2)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_e37y7")
+
+[node name="Col3" type="CollisionShape3D" parent="." unique_id=2075739661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.225, 0)
+shape = SubResource("BoxShape3D_f1ppu")

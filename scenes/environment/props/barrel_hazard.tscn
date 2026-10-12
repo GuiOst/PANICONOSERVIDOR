@@ -1,0 +1,95 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/materials/metal_painted_yellow.tres" id="1_d40y2"]
+[ext_resource type="Material" path="res://assets/materials/metal_dark.tres" id="2_ftp4e"]
+[ext_resource type="Material" path="res://assets/materials/metal_bare.tres" id="3_m406q"]
+[ext_resource type="Material" path="res://assets/materials/hazard_stripes.tres" id="4_ynqfc"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xt7yo"]
+material = ExtResource("1_d40y2")
+top_radius = 0.29
+bottom_radius = 0.29
+height = 0.9
+radial_segments = 20
+rings = 1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_y2mkq"]
+height = 0.9
+radius = 0.3
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_uyf0g"]
+material = ExtResource("2_ftp4e")
+top_radius = 0.3
+bottom_radius = 0.3
+height = 0.035
+radial_segments = 20
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_sou7x"]
+material = ExtResource("2_ftp4e")
+top_radius = 0.27
+bottom_radius = 0.27
+height = 0.01
+radial_segments = 20
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1yiqf"]
+material = ExtResource("3_m406q")
+top_radius = 0.04
+bottom_radius = 0.04
+height = 0.03
+radial_segments = 8
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_eny40"]
+material = ExtResource("4_ynqfc")
+top_radius = 0.292
+bottom_radius = 0.292
+height = 0.16
+radial_segments = 20
+rings = 1
+
+[node name="Barrel" type="StaticBody3D" unique_id=1568694613]
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=1742096762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+mesh = SubResource("CylinderMesh_xt7yo")
+
+[node name="Col" type="CollisionShape3D" parent="." unique_id=1183462196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+shape = SubResource("CylinderShape3D_y2mkq")
+
+[node name="Ring" type="MeshInstance3D" parent="." unique_id=857943995]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_uyf0g")
+
+[node name="Ring2" type="MeshInstance3D" parent="." unique_id=680244856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32, 0)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_uyf0g")
+
+[node name="Ring3" type="MeshInstance3D" parent="." unique_id=860393511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_uyf0g")
+
+[node name="Ring4" type="MeshInstance3D" parent="." unique_id=1258152661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86, 0)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_uyf0g")
+
+[node name="Lid" type="MeshInstance3D" parent="." unique_id=1811666724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.905, 0)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_sou7x")
+
+[node name="Cap" type="MeshInstance3D" parent="." unique_id=1215397337]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0.915, 0)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_1yiqf")
+
+[node name="HazardBand" type="MeshInstance3D" parent="." unique_id=182974843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46, 0)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_eny40")

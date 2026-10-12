@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/textures/metal_painted_albedo.png" id="1_8urbx"]
+[ext_resource type="Texture2D" path="res://assets/textures/metal_painted_normal.png" id="2_5c3xr"]
+[ext_resource type="Texture2D" path="res://assets/textures/metal_painted_rough.png" id="3_utwu1"]
+
+[resource]
+albedo_color = Color(0.75, 0.55, 0.08, 1)
+albedo_texture = ExtResource("1_8urbx")
+metallic = 0.25
+metallic_specular = 0.4
+roughness = 0.6
+roughness_texture = ExtResource("3_utwu1")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("2_5c3xr")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 4.0
+texture_filter = 5

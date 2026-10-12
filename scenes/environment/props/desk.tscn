@@ -1,0 +1,149 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/materials/metal_painted_gray.tres" id="1_mbv13"]
+[ext_resource type="Material" path="res://assets/materials/metal_dark.tres" id="2_vjkws"]
+[ext_resource type="Material" path="res://assets/materials/plastic_gray.tres" id="3_ui0yt"]
+[ext_resource type="Material" path="res://assets/materials/screen_green.tres" id="4_mcynk"]
+[ext_resource type="FontFile" path="res://assets/fonts/DejaVuSansMono-Bold.ttf" id="5_nscy8"]
+[ext_resource type="Material" path="res://assets/materials/sign_white.tres" id="6_me4ss"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2h2ht"]
+material = ExtResource("1_mbv13")
+size = Vector3(1.4, 0.04, 0.7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wgoor"]
+size = Vector3(1.4, 0.04, 0.7)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ww34e"]
+material = ExtResource("2_vjkws")
+size = Vector3(0.04, 0.74, 0.04)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fhsh5"]
+size = Vector3(0.04, 0.74, 0.04)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7bayg"]
+size = Vector3(0.04, 0.74, 0.04)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dtbsm"]
+size = Vector3(0.04, 0.74, 0.04)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f53if"]
+size = Vector3(0.04, 0.74, 0.04)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kp5g6"]
+material = ExtResource("1_mbv13")
+size = Vector3(0.4, 0.55, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ngpmi"]
+size = Vector3(0.4, 0.55, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ptwf3"]
+material = ExtResource("3_ui0yt")
+size = Vector3(0.45, 0.38, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2a41o"]
+size = Vector3(0.45, 0.38, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5p4r5"]
+material = ExtResource("4_mcynk")
+size = Vector3(0.36, 0.27, 0.01)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7iphl"]
+material = ExtResource("3_ui0yt")
+size = Vector3(0.42, 0.025, 0.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cmwvx"]
+material = ExtResource("6_me4ss")
+size = Vector3(0.22, 0.01, 0.3)
+
+[node name="Desk" type="StaticBody3D" unique_id=1729212385]
+
+[node name="Top" type="MeshInstance3D" parent="." unique_id=678936426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76, 0)
+mesh = SubResource("BoxMesh_2h2ht")
+
+[node name="Col" type="CollisionShape3D" parent="." unique_id=1742507977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76, 0)
+shape = SubResource("BoxShape3D_wgoor")
+
+[node name="Leg" type="MeshInstance3D" parent="." unique_id=255608664]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66, 0.37, -0.31)
+mesh = SubResource("BoxMesh_ww34e")
+
+[node name="Col2" type="CollisionShape3D" parent="." unique_id=930239208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66, 0.37, -0.31)
+shape = SubResource("BoxShape3D_fhsh5")
+
+[node name="Leg2" type="MeshInstance3D" parent="." unique_id=422832445]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66, 0.37, 0.31)
+mesh = SubResource("BoxMesh_ww34e")
+
+[node name="Col3" type="CollisionShape3D" parent="." unique_id=1218353027]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66, 0.37, 0.31)
+shape = SubResource("BoxShape3D_7bayg")
+
+[node name="Leg3" type="MeshInstance3D" parent="." unique_id=471228024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66, 0.37, -0.31)
+mesh = SubResource("BoxMesh_ww34e")
+
+[node name="Col4" type="CollisionShape3D" parent="." unique_id=1049962603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66, 0.37, -0.31)
+shape = SubResource("BoxShape3D_dtbsm")
+
+[node name="Leg4" type="MeshInstance3D" parent="." unique_id=306218548]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66, 0.37, 0.31)
+mesh = SubResource("BoxMesh_ww34e")
+
+[node name="Col5" type="CollisionShape3D" parent="." unique_id=1746155499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66, 0.37, 0.31)
+shape = SubResource("BoxShape3D_f53if")
+
+[node name="Drawers" type="MeshInstance3D" parent="." unique_id=1598229759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.46, 0)
+mesh = SubResource("BoxMesh_kp5g6")
+
+[node name="Col6" type="CollisionShape3D" parent="." unique_id=1620436718]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.46, 0)
+shape = SubResource("BoxShape3D_ngpmi")
+
+[node name="Monitor" type="MeshInstance3D" parent="." unique_id=1165567840]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.97, -0.1)
+mesh = SubResource("BoxMesh_ptwf3")
+
+[node name="Col7" type="CollisionShape3D" parent="." unique_id=1847403295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.97, -0.1)
+shape = SubResource("BoxShape3D_2a41o")
+
+[node name="Screen" type="MeshInstance3D" parent="." unique_id=1728648324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.98, 0.101)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_5p4r5")
+
+[node name="ScreenText" type="Label3D" parent="." unique_id=1485870823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.99, 0.107)
+pixel_size = 0.0014
+shaded = true
+double_sided = false
+alpha_cut = 2
+modulate = Color(0.5, 1, 0.6, 1)
+text = "> SISTEMA OFFLINE_
+> ERRO 0x3F: NÓ B-2"
+font = ExtResource("5_nscy8")
+font_size = 20
+outline_size = 0
+
+[node name="Keyboard" type="MeshInstance3D" parent="." unique_id=1686460013]
+transform = Transform3D(1, 0, 0, 0, 0.99026805, -0.1391731, 0, 0.1391731, 0.99026805, -0.2, 0.79, 0.2)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_7iphl")
+
+[node name="Papers" type="MeshInstance3D" parent="." unique_id=1687465441]
+transform = Transform3D(0.9781476, 0, 0.2079117, 0, 1, 0, -0.2079117, 0, 0.9781476, 0.3, 0.785, 0.1)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_cmwvx")
+
+[node name="ScreenGlow" type="OmniLight3D" parent="." unique_id=1673851264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.98, 0.3)
+light_color = Color(0.3, 1, 0.45, 1)
+light_energy = 0.35
+omni_range = 1.6

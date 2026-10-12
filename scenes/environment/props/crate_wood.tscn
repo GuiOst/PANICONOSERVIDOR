@@ -1,0 +1,70 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/materials/wood_crate.tres" id="1_rykq1"]
+[ext_resource type="Material" path="res://assets/materials/metal_dark.tres" id="2_6v63r"]
+[ext_resource type="FontFile" path="res://assets/fonts/DejaVuSansMono-Bold.ttf" id="3_gf7p7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dla0t"]
+material = ExtResource("1_rykq1")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_306md"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_l4lbj"]
+material = ExtResource("2_6v63r")
+size = Vector3(0.08, 1, 0.08)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rt8v2"]
+material = ExtResource("2_6v63r")
+size = Vector3(1.02, 0.07, 1.02)
+
+[node name="CrateWood" type="StaticBody3D" unique_id=2087866502]
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=1837490513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_dla0t")
+
+[node name="Col" type="CollisionShape3D" parent="." unique_id=713951743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_306md")
+
+[node name="Edge" type="MeshInstance3D" parent="." unique_id=1555839713]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47, 0.5, -0.47)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_l4lbj")
+
+[node name="Edge2" type="MeshInstance3D" parent="." unique_id=47563335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47, 0.5, 0.47)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_l4lbj")
+
+[node name="Edge3" type="MeshInstance3D" parent="." unique_id=272880258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47, 0.5, -0.47)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_l4lbj")
+
+[node name="Edge4" type="MeshInstance3D" parent="." unique_id=1285417607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47, 0.5, 0.47)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_l4lbj")
+
+[node name="BandTop" type="MeshInstance3D" parent="." unique_id=1811579116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_rt8v2")
+
+[node name="BandBottom" type="MeshInstance3D" parent="." unique_id=602201349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_rt8v2")
+
+[node name="Stencil" type="Label3D" parent="." unique_id=1062819571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0.512)
+pixel_size = 0.0028
+shaded = true
+double_sided = false
+alpha_cut = 2
+modulate = Color(0.1, 0.07, 0.04, 1)
+text = "FRÁGIL"
+font = ExtResource("3_gf7p7")
+font_size = 64
+outline_size = 0

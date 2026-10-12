@@ -1,0 +1,174 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/materials/metal_painted_green.tres" id="1_8gah2"]
+[ext_resource type="Material" path="res://assets/materials/metal_dark.tres" id="2_gwue2"]
+[ext_resource type="Material" path="res://assets/materials/plastic_gray.tres" id="3_qwtmu"]
+[ext_resource type="Material" path="res://assets/materials/sign_yellow.tres" id="4_l42ve"]
+[ext_resource type="FontFile" path="res://assets/fonts/DejaVuSansMono-Bold.ttf" id="5_ow28l"]
+[ext_resource type="Material" path="res://assets/materials/metal_bare.tres" id="6_rsapr"]
+[ext_resource type="Script" path="res://scripts/systems/looping_sound_3d.gd" id="7_2p3eo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_g5b32"]
+material = ExtResource("1_8gah2")
+size = Vector3(1.6, 1.8, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bibye"]
+size = Vector3(1.6, 1.8, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1cham"]
+material = ExtResource("2_gwue2")
+size = Vector3(1.75, 0.12, 1.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k748c"]
+material = ExtResource("1_8gah2")
+size = Vector3(0.12, 1.3, 0.03)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nyy50"]
+material = ExtResource("3_qwtmu")
+top_radius = 0.06
+bottom_radius = 0.06
+height = 0.25
+radial_segments = 10
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_sqwu4"]
+material = ExtResource("4_l42ve")
+size = Vector3(0.62, 0.24, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4mvs3"]
+material = ExtResource("6_rsapr")
+size = Vector3(0.3, 0.18, 0.01)
+
+[node name="Transformer" type="StaticBody3D" unique_id=51476826]
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=627160110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+mesh = SubResource("BoxMesh_g5b32")
+
+[node name="Col" type="CollisionShape3D" parent="." unique_id=967270709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_bibye")
+
+[node name="Base" type="MeshInstance3D" parent="." unique_id=1411308829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0)
+mesh = SubResource("BoxMesh_1cham")
+
+[node name="FinL" type="MeshInstance3D" parent="." unique_id=1196553102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86, 0.95, -0.36)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_k748c")
+
+[node name="FinR" type="MeshInstance3D" parent="." unique_id=1504448805]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86, 0.95, -0.36)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_k748c")
+
+[node name="FinL2" type="MeshInstance3D" parent="." unique_id=1503943378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86, 0.95, -0.24)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_k748c")
+
+[node name="FinR2" type="MeshInstance3D" parent="." unique_id=1095759536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86, 0.95, -0.24)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_k748c")
+
+[node name="FinL3" type="MeshInstance3D" parent="." unique_id=1745483678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86, 0.95, -0.12)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_k748c")
+
+[node name="FinR3" type="MeshInstance3D" parent="." unique_id=1874935173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86, 0.95, -0.12)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_k748c")
+
+[node name="FinL4" type="MeshInstance3D" parent="." unique_id=784297397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86, 0.95, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_k748c")
+
+[node name="FinR4" type="MeshInstance3D" parent="." unique_id=1367853170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86, 0.95, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_k748c")
+
+[node name="FinL5" type="MeshInstance3D" parent="." unique_id=236226245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86, 0.95, 0.12)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_k748c")
+
+[node name="FinR5" type="MeshInstance3D" parent="." unique_id=1486091264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86, 0.95, 0.12)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_k748c")
+
+[node name="FinL6" type="MeshInstance3D" parent="." unique_id=1181483723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86, 0.95, 0.24)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_k748c")
+
+[node name="FinR6" type="MeshInstance3D" parent="." unique_id=1075543825]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86, 0.95, 0.24)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_k748c")
+
+[node name="FinL7" type="MeshInstance3D" parent="." unique_id=419278810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86, 0.95, 0.36)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_k748c")
+
+[node name="FinR7" type="MeshInstance3D" parent="." unique_id=838571974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86, 0.95, 0.36)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_k748c")
+
+[node name="Insulator" type="MeshInstance3D" parent="." unique_id=198680092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.92, 0.2)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_nyy50")
+
+[node name="Insulator2" type="MeshInstance3D" parent="." unique_id=163912564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92, 0.2)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_nyy50")
+
+[node name="Insulator3" type="MeshInstance3D" parent="." unique_id=961862068]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 1.92, 0.2)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_nyy50")
+
+[node name="Warning" type="Node3D" parent="." unique_id=1912293286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0.511)
+
+[node name="Plate" type="MeshInstance3D" parent="Warning" unique_id=674314981]
+cast_shadow = 0
+mesh = SubResource("BoxMesh_sqwu4")
+
+[node name="Text" type="Label3D" parent="Warning" unique_id=359078860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0115)
+pixel_size = 0.0008330076
+shaded = true
+double_sided = false
+alpha_cut = 2
+modulate = Color(0.05, 0.05, 0.05, 1)
+text = "⚡ PERIGO DE MORTE
+13.8 kV"
+font = ExtResource("5_ow28l")
+font_size = 64
+outline_size = 0
+
+[node name="Plate" type="MeshInstance3D" parent="." unique_id=1916082241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.6, 0.505)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_4mvs3")
+
+[node name="Hum" type="AudioStreamPlayer3D" parent="." unique_id=1753021989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+volume_db = -8.0
+unit_size = 2.5
+max_distance = 14.0
+bus = &"Ambience"
+attenuation_filter_cutoff_hz = 6000.0
+script = ExtResource("7_2p3eo")
+stream_path = "res://assets/audio/ambience/electrical_hum.wav"

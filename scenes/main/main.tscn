@@ -1,0 +1,31 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/main/main.gd" id="1_main"]
+[ext_resource type="Environment" path="res://assets/environment/facility_environment.tres" id="2_env"]
+[ext_resource type="Script" path="res://scripts/systems/graphics_quality.gd" id="3_gfx"]
+[ext_resource type="PackedScene" path="res://scenes/environment/facility_level.tscn" id="4_level"]
+[ext_resource type="Script" path="res://scripts/systems/ambience_player.gd" id="5_amb"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="6_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="7_pause"]
+
+[node name="Main" type="Node3D" groups=["gameplay_root"]]
+script = ExtResource("1_main")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_env")
+script = ExtResource("3_gfx")
+
+[node name="Level" parent="." instance=ExtResource("4_level")]
+
+[node name="Players" type="Node3D" parent="."]
+
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+bus = &"Ambience"
+script = ExtResource("5_amb")
+stream_path = "res://assets/audio/ambience/underground_ambience.wav"
+target_volume_db = -6.0
+
+[node name="HUD" parent="." instance=ExtResource("6_hud")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("7_pause")]

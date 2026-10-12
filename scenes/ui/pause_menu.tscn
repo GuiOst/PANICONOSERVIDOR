@@ -1,0 +1,330 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/pause_menu.gd" id="1_pause"]
+[ext_resource type="Theme" path="res://scenes/ui/horror_theme.tres" id="2_theme"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 10
+visible = false
+script = ExtResource("1_pause")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+
+[node name="Dim" type="ColorRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.72)
+
+[node name="Center" type="CenterContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Root/Center"]
+custom_minimum_size = Vector2(820, 0)
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Root/Center/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 32
+
+[node name="MainPage" type="VBoxContainer" parent="Root/Center/Panel/Margin"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Root/Center/Panel/Margin/MainPage"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.16, 0.1, 1)
+theme_override_font_sizes/font_size = 60
+text = "PAUSADO"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Root/Center/Panel/Margin/MainPage"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.53, 0.47, 1)
+theme_override_font_sizes/font_size = 19
+text = "PÂNICO NO SERVIDOR  ·  SETOR B-2"
+horizontal_alignment = 1
+
+[node name="Sep" type="HSeparator" parent="Root/Center/Panel/Margin/MainPage"]
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="Root/Center/Panel/Margin/MainPage"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "CONTINUAR"
+alignment = 0
+
+[node name="OptionsButton" type="Button" parent="Root/Center/Panel/Margin/MainPage"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "OPÇÕES"
+alignment = 0
+
+[node name="RestartButton" type="Button" parent="Root/Center/Panel/Margin/MainPage"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "REINICIAR"
+alignment = 0
+
+[node name="MenuButton" type="Button" parent="Root/Center/Panel/Margin/MainPage"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "MENU PRINCIPAL"
+alignment = 0
+
+[node name="QuitButton" type="Button" parent="Root/Center/Panel/Margin/MainPage"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SAIR DO JOGO"
+alignment = 0
+
+[node name="Sep2" type="HSeparator" parent="Root/Center/Panel/Margin/MainPage"]
+layout_mode = 2
+
+[node name="Controls" type="Label" parent="Root/Center/Panel/Margin/MainPage"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.49, 0.44, 1)
+theme_override_font_sizes/font_size = 18
+text = "WASD mover · SHIFT correr · ESPAÇO pular\nE interagir · F lanterna · ESC pausar"
+horizontal_alignment = 1
+
+[node name="OptionsPage" type="VBoxContainer" parent="Root/Center/Panel/Margin"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Root/Center/Panel/Margin/OptionsPage"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.16, 0.1, 1)
+theme_override_font_sizes/font_size = 44
+text = "OPÇÕES"
+horizontal_alignment = 1
+
+[node name="Sep" type="HSeparator" parent="Root/Center/Panel/Margin/OptionsPage"]
+layout_mode = 2
+
+[node name="Grid" type="GridContainer" parent="Root/Center/Panel/Margin/OptionsPage"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 12
+columns = 3
+
+[node name="SensitivityLabel" type="Label" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+text = "Sensibilidade do mouse"
+
+[node name="SensitivitySlider" type="HSlider" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+custom_minimum_size = Vector2(280, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.05
+max_value = 1.5
+step = 0.01
+
+[node name="SensitivityValue" type="Label" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="FovLabel" type="Label" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+text = "Campo de visão"
+
+[node name="FovSlider" type="HSlider" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+custom_minimum_size = Vector2(280, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 60.0
+max_value = 100.0
+step = 1.0
+
+[node name="FovValue" type="Label" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="MasterLabel" type="Label" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+text = "Volume geral"
+
+[node name="MasterSlider" type="HSlider" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+custom_minimum_size = Vector2(280, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+
+[node name="MasterValue" type="Label" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="SfxLabel" type="Label" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+text = "Efeitos sonoros"
+
+[node name="SfxSlider" type="HSlider" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+custom_minimum_size = Vector2(280, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+
+[node name="SfxValue" type="Label" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="AmbienceLabel" type="Label" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+text = "Som ambiente"
+
+[node name="AmbienceSlider" type="HSlider" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+custom_minimum_size = Vector2(280, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+
+[node name="AmbienceValue" type="Label" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="CreatureLabel" type="Label" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+text = "Criatura"
+
+[node name="CreatureSlider" type="HSlider" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+custom_minimum_size = Vector2(280, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+
+[node name="CreatureValue" type="Label" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="UiLabel" type="Label" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+text = "Interface"
+
+[node name="UiSlider" type="HSlider" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+custom_minimum_size = Vector2(280, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+
+[node name="UiValue" type="Label" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="QualityLabel" type="Label" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+text = "Qualidade gráfica"
+
+[node name="QualityOption" type="OptionButton" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QualitySpacer" type="Control" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+
+[node name="FullscreenLabel" type="Label" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+text = "Tela cheia"
+
+[node name="FullscreenCheck" type="CheckButton" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="FullscreenSpacer" type="Control" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+
+[node name="VsyncLabel" type="Label" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+text = "VSync"
+
+[node name="VsyncCheck" type="CheckButton" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="VsyncSpacer" type="Control" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+
+[node name="HeadBobLabel" type="Label" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+text = "Balanço da câmera"
+
+[node name="HeadBobCheck" type="CheckButton" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="HeadBobSpacer" type="Control" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+
+[node name="InvertYLabel" type="Label" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+text = "Inverter eixo Y"
+
+[node name="InvertYCheck" type="CheckButton" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="InvertYSpacer" type="Control" parent="Root/Center/Panel/Margin/OptionsPage/Grid"]
+layout_mode = 2
+
+[node name="Sep2" type="HSeparator" parent="Root/Center/Panel/Margin/OptionsPage"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="Root/Center/Panel/Margin/OptionsPage"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "VOLTAR"
+

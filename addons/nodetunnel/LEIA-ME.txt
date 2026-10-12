@@ -1,0 +1,11 @@
+NodeTunnel (GDExtension) — relay gratuito para multiplayer pela internet
+Origem: https://github.com/curtjs/nodetunnel  (versão 1.1.1_beta, licença MIT — ver LICENSE)
+
+Copiamos APENAS a extensão (NodeTunnel.gdextension + pasta bin/).
+O plugin de atualização automática do autor NÃO foi incluído de propósito:
+assim nada é baixado/alterado sem você saber.
+
+bin/nodetunnel.dll      -> Windows (precisa ir junto com o .exe exportado;
+                           o Godot copia automaticamente ao exportar)
+bin/libnodetunnel.so    -> Linux
+bin/libnodetunnel.dylib -> macOS

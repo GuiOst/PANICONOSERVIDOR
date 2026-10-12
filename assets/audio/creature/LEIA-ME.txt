@@ -1,0 +1,2 @@
+Pasta reservada para os sons da criatura (Etapa F — O Vigia).
+Os sons devem ser tocados no barramento de áudio "Creature".

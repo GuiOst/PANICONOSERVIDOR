@@ -1,0 +1,51 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/materials/metal_painted_green.tres" id="1_r72vx"]
+[ext_resource type="Material" path="res://assets/materials/metal_bare.tres" id="2_w4dcm"]
+[ext_resource type="FontFile" path="res://assets/fonts/DejaVuSansMono-Bold.ttf" id="3_x5bkf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_72pgi"]
+material = ExtResource("1_r72vx")
+size = Vector3(0.7, 0.45, 0.45)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jb8pg"]
+size = Vector3(0.7, 0.45, 0.45)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qri4e"]
+material = ExtResource("1_r72vx")
+size = Vector3(0.72, 0.05, 0.47)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0jiu3"]
+material = ExtResource("2_w4dcm")
+size = Vector3(0.08, 0.1, 0.02)
+
+[node name="CrateMetal" type="StaticBody3D" unique_id=188567046]
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=1855598144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.225, 0)
+mesh = SubResource("BoxMesh_72pgi")
+
+[node name="Col" type="CollisionShape3D" parent="." unique_id=2079052057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.225, 0)
+shape = SubResource("BoxShape3D_jb8pg")
+
+[node name="Lid" type="MeshInstance3D" parent="." unique_id=1673203261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+mesh = SubResource("BoxMesh_qri4e")
+
+[node name="Latch" type="MeshInstance3D" parent="." unique_id=316137118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37, 0.235)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_0jiu3")
+
+[node name="Stencil" type="Label3D" parent="." unique_id=1706563468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0.2265)
+pixel_size = 0.0025
+shaded = true
+double_sided = false
+alpha_cut = 2
+modulate = Color(0.8, 0.78, 0.7, 1)
+text = "EQUIP. 07"
+font = ExtResource("3_x5bkf")
+font_size = 40
+outline_size = 0

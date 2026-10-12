@@ -1,0 +1,11 @@
+# Cache do Godot (recriado automaticamente ao abrir o projeto)
+.godot/
+# Executáveis exportados
+build/
+# Arquivos temporários de sistema
+*.tmp
+Thumbs.db
+.DS_Store
+
+# Cópias de segurança locais
+_backups/
